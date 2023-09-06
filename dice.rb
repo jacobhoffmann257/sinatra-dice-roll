@@ -7,3 +7,6 @@ end
 get("/") do
   "Hello World"
 end
+get("/giraffe") do 
+"Hopefully this shows up"
+end
