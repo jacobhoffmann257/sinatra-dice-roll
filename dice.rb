@@ -6,7 +6,16 @@ use(Better_errors::Middleware)
 Better_errors.application_root = __dir__
 Better_errors::Middleware.allow_ip!('0.0.0.0/0.0.0.0')
 get("/") do
-  "Hello World"
+  "
+  <h1>Dice Roll</h1>
+
+  <ul>
+    <li><a href =\"/dice/2/6">Roll two D6</li>
+    <li><a href =\"/dice/2/10">Roll two D10</li>
+    <li><a href = \"/dice/5/4">Roll 5 D4</li>
+  </ul>
+  
+  "
 end
 get("/zebra") do
   "We must add a route for each path to support"
