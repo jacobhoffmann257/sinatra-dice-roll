@@ -5,11 +5,11 @@ require "binding_of_caller"
 use(Better_errors::Middleware)
 Better_errors.application_root = __dir__
 Better_errors::Middleware.allow_ip!('0.0.0.0/0.0.0.0')
-get("/zebra") do
-  "We must add a route for each path to support"
-end
 get("/") do
   "Hello World"
+end
+get("/zebra") do
+  "We must add a route for each path to support"
 end
 get("/giraffe") do 
 "Hopefully this shows up"
