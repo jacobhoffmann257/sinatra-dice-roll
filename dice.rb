@@ -1,6 +1,10 @@
 require "sinatra"
 require "sinatra/reloader"
-
+require "better_errors"
+require "binding_of_caller"
+use(Better_errors::Middleware)
+Better_errors.application_root = __dir__
+Better_errors::Middleware.allow_ip!('0.0.0.0/0.0.0.0')
 get("/zebra") do
   "We must add a route for each path to support"
 end
@@ -17,7 +21,7 @@ sum = first_die + second_die
 
 outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
 
-"<h1> 2d10 </h1>
+"<h1> 2d6 </h1>
 <p>#{outcome}</p>"
 end
 get("/dice/2/10") do
